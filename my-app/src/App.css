@@ -21,7 +21,7 @@
 
 #container {
   height: 600px;
-  background-color: rgb(143, 138, 138);
+  background-color: rgb(184, 235, 248);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,6 +37,19 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
+}
+
+.completed, .active{
+  font-size: 20px;
+}
+
+.completed{
+  background-color: rgb(112, 187, 124);
+  font-weight: bold;
+}
+
+.active{
+  background-color: rgb(221, 219, 93);
 }
 
 

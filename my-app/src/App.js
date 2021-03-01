@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Item from "./components/Item";
+import Items from "./components/Items";
 import "./App.css";
 
 export default class App extends Component {
@@ -36,7 +36,7 @@ export default class App extends Component {
   render() {
     return (
       <div id="app">
-        <Item todos={this.state.todos}/>
+        <Items todos={this.state.todos}/>
       </div>
     );
   }

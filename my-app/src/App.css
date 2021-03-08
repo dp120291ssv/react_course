@@ -1,5 +1,5 @@
 #app {
-  min-height: 100%;
+  min-height: 400px;
   text-align: center;
   border-style: solid;
   border-radius: 5px;
@@ -37,6 +37,62 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
+}
+
+table {
+  border: 1px solid grey;
+  margin-bottom: 20px;
+}
+/* границы ячеек первого ряда таблицы */
+th {
+  border: 1px solid grey;
+}
+/* границы ячеек тела таблицы */
+td {
+  width: 250px;
+  border: 1px solid grey;
+}
+
+.main-content-wrapper {
+  margin-top: 10px;
+  display: flex;
+}
+
+.right-form-wrapper {
+  width: 50%;
+  margin: auto;
+}
+
+.left-form-wrapper {
+  width: 50%;
+  margin: auto;
+}
+
+input{
+  margin-right: 5px;
+}
+
+.add-btn{
+  margin-bottom: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.save-btn{
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: green;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.edit-btn{
+  cursor: pointer;
+}
+
+.delete-btn{
+  cursor: pointer;
 }
 
 

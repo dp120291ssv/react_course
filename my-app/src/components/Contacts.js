@@ -30,7 +30,7 @@ export default class Contacts extends Component {
     });
   };
 
-  onAddContact = () => {
+  onAddContactBtn = () => {
     this.setState({
       showContactForm: !this.state.showContactForm,
     });
@@ -42,7 +42,7 @@ export default class Contacts extends Component {
         <div className="main-content-wrapper">
           <div className="left-form-wrapper">
             <ContactsList list={this.state.list} onDelete={this.deleteItem} />
-            <button className="add-btn" onClick={this.onAddContact}>
+            <button className="add-btn" onClick={this.onAddContactBtn}>
               {!this.state.showContactForm ? "Add Contact" : "Hide Form"}
             </button>
           </div>

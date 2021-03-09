@@ -17,7 +17,7 @@ export default class ContactsForm extends Component {
 
   onInputChange = (e) => {
     this.setState({
-      contact: { ...this.state.contact, [e.target.name]: e.target.value, [e.target.surname]: e.target.value, [e.target.phone]: e.target.value },
+      contact: { ...this.state.contact, [e.target.name]: e.target.value},
     });
   };
 

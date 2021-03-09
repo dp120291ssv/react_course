@@ -4,12 +4,6 @@ export function getContacts() {
     return fetch(CONTACTS_URL).then((res) => res.json());
 }
 
-export function deleteContact(id) {
-    return fetch(CONTACTS_URL + id, {
-        method: 'DELETE',
-    }).then((res) => res.json());
-}
-
 export function createContact(newItem) {
     return fetch(CONTACTS_URL, {
         method: 'POST',
@@ -17,5 +11,21 @@ export function createContact(newItem) {
         headers: {
             'Content-Type': 'application/json',
         },
+    }).then((res) => res.json());
+}
+
+export function updateContact(newItem) {
+    return fetch(CONTACTS_URL + newItem.id, {
+        method: 'PUT',
+        body: JSON.stringify(newItem),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    }).then((res) => res.json());
+}
+
+export function deleteContact(id) {
+    return fetch(CONTACTS_URL + id, {
+        method: 'DELETE',
     }).then((res) => res.json());
 }

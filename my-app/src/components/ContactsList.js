@@ -19,6 +19,7 @@ export default class ContactsList extends Component {
               key={item.id}
               item={item}
               onDelete={this.props.onDelete}
+              onEdit={this.props.onEdit}
             />
           ))}
         </tbody>

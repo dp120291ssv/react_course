@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
-import './App.css'
-import Contacts from './components/Contacts'
+import React from "react";
+import "./App.css";
+import Contacts from "./components/Contacts";
 
-export default class App extends Component {
-  render() {
-    return (
-      <div id='app'>
-        <Contacts />
-      </div>
-    )
-  }
+export default function App() {
+  return (
+    <div id="app">
+      <Contacts />
+    </div>
+  );
 }

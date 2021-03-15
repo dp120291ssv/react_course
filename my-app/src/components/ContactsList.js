@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import ContactsListItem from "../components/ContactsListItem";
 
-export default class ContactsList extends Component {
-  render() {
+export default function ContactsList ({list, onDelete}) {
     return (
       <table>
         <thead>
@@ -14,16 +13,15 @@ export default class ContactsList extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.list.map((item) => (
+          {list.map((item) => (
             <ContactsListItem
               key={item.id}
               item={item}
-              onDelete={this.props.onDelete}
-              onEdit={this.props.onEdit}
+              onDelete={onDelete}
             />
           ))}
         </tbody>
       </table>
     );
   }
-}
+

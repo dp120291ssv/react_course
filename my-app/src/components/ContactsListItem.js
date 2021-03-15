@@ -1,31 +1,25 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class ContactsListItem extends Component {
-  onDeleteBtnClick = (e) => {
+export default function ContactsListItem(props) {
+  function onDeleteBtnClick (e) {
     e.stopPropagation();
-    this.props.onDelete(this.props.item.id);
+    props.onDelete(props.item.id);
   };
 
-  onEditBtnClick = () => {
-    this.props.onEdit(this.props.item);
-  };
-
-  render() {
-    const { item } = this.props;
-    return (
-      <tr>
-        <td>{item.name}</td>
-        <td>{item.surname}</td>
-        <td>{item.phone}</td>
-        <td>
-          <button className="delete-btn" onClick={this.onDeleteBtnClick}>
-            DELETE
-          </button>
-          <button className="edit-btn" onClick={this.onEditBtnClick}>
-            EDIT
-          </button>
-        </td>
-      </tr>
-    );
-  }
+  const { item } = props;
+  return (
+    <tr>
+      <td>{item.name}</td>
+      <td>{item.surname}</td>
+      <td>{item.phone}</td>
+      <td>
+        <button className="delete-btn" onClick={onDeleteBtnClick}>
+          DELETE
+        </button>
+        <button className="edit-btn" disabled>
+          EDIT
+        </button>
+      </td>
+    </tr>
+  );
 }

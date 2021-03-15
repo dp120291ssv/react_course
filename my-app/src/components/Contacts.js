@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import {
   createContact,
   deleteContact,
-  getContacts,
-  updateContact
+  getContacts
 } from "../services/contactsService";
 import ContactsList from "./ContactsList";
 import ContactsForm from "./ContactsForm";

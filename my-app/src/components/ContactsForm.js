@@ -1,53 +1,54 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 
-export default class ContactsForm extends Component {
-  state = {
-    contact: {
-      name: "",
-      surname: "",
-      phone: "",
-    },
-  };
+export default function ContactsForm({ onSave }) {
 
-  onFormSubmit = (e) => {
+  const [contact, setContact] = useState(getEmptyContact());
+  
+  function getEmptyContact() {
+    return {
+        name: '',
+        surname: '',
+        phone: '',
+    };
+}
+
+  function onFormSubmit(e) {
     e.preventDefault();
-    this.props.onSave(this.state.contact);
-    this.setState({ contact: { name: "", surname: "", phone: "" } });
-  };
-
-  onInputChange = (e) => {
-    this.setState({
-      contact: { ...this.state.contact, [e.target.name]: e.target.value},
-    });
-  };
-
-  render() {
-    return (
-      <form onSubmit={this.onFormSubmit}>
-        <h3>Fill contact information:</h3>
-        <input
-          type="text"
-          placeholder="name"
-          name="name"
-          value={this.state.contact.title}
-          onChange={this.onInputChange}
-        />
-        <input
-          type="text"
-          placeholder="surname"
-          name="surname"
-          value={this.state.contact.title}
-          onChange={this.onInputChange}
-        />
-        <input
-          type="text"
-          placeholder="phone"
-          name="phone"
-          value={this.state.contact.title}
-          onChange={this.onInputChange}
-        />
-        <button className="save-btn">SAVE</button>
-      </form>
-    );
+    onSave(contact);
+    // this.setState({ contact: { name: "", surname: "", phone: "" } });
   }
+
+  function onInputChange(e) {
+    setContact({
+      contact: { ...contact, [e.target.name]: e.target.value },
+    });
+  }
+
+  return (
+    <form onSubmit={onFormSubmit}>
+      <h3>Fill contact information:</h3>
+      <input
+        type="text"
+        placeholder="name"
+        name="name"
+        value={contact.name}
+        onChange={onInputChange}
+      />
+      <input
+        type="text"
+        placeholder="surname"
+        name="surname"
+        value={contact.surname}
+        onChange={onInputChange}
+      />
+      <input
+        type="text"
+        placeholder="phone"
+        name="phone"
+        value={contact.phone}
+        onChange={onInputChange}
+      />
+      <button className="save-btn">SAVE</button>
+    </form>
+  );
 }

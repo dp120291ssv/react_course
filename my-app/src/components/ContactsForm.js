@@ -1,27 +1,23 @@
 import React, { useState, useEffect } from "react";
 
+const initialState = {
+  name: '',
+  surname: '',
+  phone: '',
+};
+
 export default function ContactsForm({ onSave }) {
 
-  const [contactState, setContactState] = useState(getEmptyContact());
-
-  function getEmptyContact() {
-    return {
-        name: '',
-        surname: '',
-        phone: '',
-    };
-}
+  const [contactState, setContactState] = useState(initialState);
 
   function onFormSubmit(e) {
     e.preventDefault();
     onSave(contactState);
-    setContactState({ ...contactState, contact: { name: "", surname: "", phone: "" } });
+    setContactState({ ...contactState, initialState});
   }
 
   function onInputChange(e) {
-    setContactState({
-      ...contactState, contact: { ...contactState, [e.target.name]: e.target.value },
-    });
+    setContactState({ ...contactState, [e.target.name]: e.target.value });
   }
 
   return (

@@ -43,7 +43,6 @@ export default function Contacts() {
           <ContactsList
             list={state.list}
             onDelete={deleteItem}
-            // onEdit={updateContact}
           />
           <button className="add-btn" onClick={onAddContactBtn}>
             {!state.showContactForm ? "Add Contact" : "Hide Form"}

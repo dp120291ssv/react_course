@@ -25,7 +25,7 @@ export default function Contacts() {
     });
   };
 
-  const create = (newItem) => {
+  const onCreate = (newItem) => {
     createContact(newItem).then((data) => {
       setState({ ...state, list: [...state.list, data] });
     });
@@ -51,7 +51,7 @@ export default function Contacts() {
         </div>
         <div className="right-form-wrapper">
           {state.showContactForm ? (
-            <ContactsForm onSave={create} />
+            <ContactsForm onSave={onCreate} />
           ) : null}
         </div>
       </div>

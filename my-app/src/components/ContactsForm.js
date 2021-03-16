@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 export default function ContactsForm({ onSave }) {
 
-  const [contact, setContact] = useState(getEmptyContact());
+  const [contactState, setContactState] = useState(getEmptyContact());
 
   function getEmptyContact() {
     return {
@@ -14,13 +14,13 @@ export default function ContactsForm({ onSave }) {
 
   function onFormSubmit(e) {
     e.preventDefault();
-    onSave(contact);
-    // this.setState({ contact: { name: "", surname: "", phone: "" } });
+    onSave(contactState);
+    setContactState({ ...contactState, contact: { name: "", surname: "", phone: "" } });
   }
 
   function onInputChange(e) {
-    setContact({
-      contact: { ...contact, [e.target.name]: e.target.value },
+    setContactState({
+      ...contactState, contact: { ...contactState, [e.target.name]: e.target.value },
     });
   }
 
@@ -31,21 +31,21 @@ export default function ContactsForm({ onSave }) {
         type="text"
         placeholder="name"
         name="name"
-        value={contact.name}
+        value={contactState.name}
         onChange={onInputChange}
       />
       <input
         type="text"
         placeholder="surname"
         name="surname"
-        value={contact.surname}
+        value={contactState.surname}
         onChange={onInputChange}
       />
       <input
         type="text"
         placeholder="phone"
         name="phone"
-        value={contact.phone}
+        value={contactState.phone}
         onChange={onInputChange}
       />
       <button className="save-btn">SAVE</button>

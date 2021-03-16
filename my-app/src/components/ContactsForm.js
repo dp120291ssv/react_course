@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const initialState = {
   name: '',
@@ -14,6 +14,7 @@ export default function ContactsForm({ onSave }) {
     e.preventDefault();
     onSave(contactState);
     setContactState({ ...contactState, initialState});
+    setContactState(initialState)
   }
 
   function onInputChange(e) {

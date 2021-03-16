@@ -21,7 +21,7 @@ export default function Contacts() {
 
   function onAddContactBtn () {
     setState((prevState) => {
-      return { ...prevState, showContactForm: true };
+      return { ...prevState, showContactForm: !state.showContactForm };
     });
   };
 

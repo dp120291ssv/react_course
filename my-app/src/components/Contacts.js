@@ -17,21 +17,21 @@ export default function Contacts() {
 
   useEffect(() => {
     getContacts().then((list) => setState({ ...initialState, list }));
-  });
+  }, []);
 
-  const onAddContactBtn = () => {
+  function onAddContactBtn () {
     setState((prevState) => {
       return { ...prevState, showContactForm: true };
     });
   };
 
-  const onCreate = (newItem) => {
+  function onCreate(newItem) {
     createContact(newItem).then((data) => {
       setState({ ...state, list: [...state.list, data] });
     });
   };
 
-  const deleteItem = (id) => {
+  function deleteItem (id) {
     deleteContact(id);
     setState({ ...state, list: state.list.filter((item) => item.id !== id) });
   };

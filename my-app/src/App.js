@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import StickerHeader from './components/StickerHeader';
 import StickersList from './components/StickersList';
 import api from './services/api';
@@ -14,11 +14,14 @@ function App() {
         api.get().then(({ data }) => setStickers(data));
     }, []);
 
-    function addNewSticker() {
-        api.post('', EMPTY_STICKER).then(({ data }) =>
+    const addNewSticker = useCallback(
+        () => {
+            api.post('', EMPTY_STICKER).then(({ data }) =>
             setStickers([...stickers, data])
         );
-    }
+        },
+        [stickers],
+    )
 
     function deleteSticker(sticker) {
         api.delete(sticker.id).then(() => {
@@ -42,7 +45,6 @@ function App() {
 
     function saveSticker(id) {
         const sticker = stickers.find((el) => el.id === id);
-
         api.put(id, sticker);
     }
 

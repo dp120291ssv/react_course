@@ -14,9 +14,29 @@
   border-color: rgb(226, 15, 15);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 30px;
   margin-top: 10px;
+  padding: 0px 30px 0px 30px;
+  font-size: 30px;
+}
+
+#navbar{
+  display: flex;
+  flex-direction: row;
+}
+
+#navbar_user, #navbar_alboms{
+  padding: 20px;
+  border-radius: 2px;
+  border-color: blueviolet;
+  border-style: dashed;
+  background-color: rgb(188, 201, 226);
+  cursor: pointer;
+}
+
+#navbar_user{
+  margin-right: 20px;
 }
 
 #container {

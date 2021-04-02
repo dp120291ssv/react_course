@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
+import Navbar from './navbar/Navbar'
 
-export default class Header extends Component {
-    render() {
+export default function Header() {
         return (
             <header id='header'>
+                <Navbar />
                 It's a Header
             </header>
         )
     }
-}

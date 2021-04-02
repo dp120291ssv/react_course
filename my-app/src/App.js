@@ -5,11 +5,11 @@ import Container from "./components/Container";
 import Footer from "./components/Footer";
 import "./App.css";
 
-export default class App extends Component {
-  render() {
+export default function App() {
     return (
-      <div id="app">
         <Router>
+        <div id="app">
+        </div>
           <Switch>
             <Route path="/">
               <Header />
@@ -18,7 +18,5 @@ export default class App extends Component {
             </Route>
           </Switch>
         </Router>
-      </div>
     );
   }
-}

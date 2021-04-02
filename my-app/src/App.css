@@ -22,6 +22,7 @@
 }
 
 #navbar{
+  padding: 30px;
   display: flex;
   flex-direction: row;
 }
@@ -30,7 +31,7 @@
   padding: 20px;
   border-radius: 2px;
   border-color: blueviolet;
-  border-style: dashed;
+  border-style: solid;
   background-color: rgb(188, 201, 226);
   cursor: pointer;
 }

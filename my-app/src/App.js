@@ -1,22 +1,32 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import React, { Component } from "react";
-import Header from "./components/Header";
-import Container from "./components/Container";
-import Footer from "./components/Footer";
+import React, { Component, useCallback, useState } from "react";
+import Users from "./components/menus/Users"
+import Alboms from "./components/menus/Alboms"
+import Navbar from "./components/Navbar";
+import api from "./service/api"
 import "./App.css";
 
 export default function App() {
-    return (
-        <Router>
-        <div id="app">
-        </div>
-          <Switch>
-            <Route path="/">
-              <Header />
-              <Container />
-              <Footer />
-            </Route>
-          </Switch>
-        </Router>
+  const [someData, setSomeData] = useState([]);
+
+  const getData = useCallback(
+    (path) => {
+        api.get(path).then(({ data }) =>
+        setSomeData(data)
     );
-  }
+    },
+    [],
+)
+
+getData()
+
+  return (
+    <Router>
+      <Switch>
+        <Route path="/users" component={Users} />
+        <Route path="/alboms" component={Alboms} />
+        <Route path="/" exact component={Navbar} />
+      </Switch>
+    </Router>
+  );
+}

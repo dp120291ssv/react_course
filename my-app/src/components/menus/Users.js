@@ -2,22 +2,23 @@ import React, { useEffect, useState } from "react";
 import api from "../../service/api";
 
 export default function Users() {
-
-  const initialState = {
-    list: [],
-  };
-
-  const [someData, setSomeData] = useState(initialState);
+  const [state, setState] = useState([]);
 
   useEffect(() => {
-    api.get('').then(({ list }) => setSomeData({ ...initialState, list }));
+    api.get('users').then(({ data }) => setState(data));
   }, []);
 
-  // const name = list.map((user) => (user.id))
-  
-
   return (
-    <div>Users 123</div>,
-    <div>{someData.list}</div>
+    <>
+      <div className="users_header">Users:</div>
+      <div className="users_list">
+        {state.map((item) => (
+          <div className="user" key={item.id}>
+          <div className="user_id">{item.id}</div>
+          <div className="user_name">{item.name}</div>
+          </div>
+        ))}
+      </div>
+    </>
   );
 }

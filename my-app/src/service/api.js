@@ -1,5 +1,6 @@
 import axios from "axios";
+import {API_URL} from "../constatnts"
 
 export default axios.create({
-  baseURL: "https://jsonplaceholder.typicode.com/users",
+  baseURL: API_URL,
 });

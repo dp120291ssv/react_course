@@ -40,6 +40,46 @@
   margin-right: 20px;
 }
 
+#root{
+  padding: 30px;
+}
+
+.users_header{
+  margin-bottom: 30px;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.user{
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+}
+
+.user_id{
+  margin-right: 10px;
+}
+
+.user_link{
+  text-decoration: none;
+}
+
+.albums_header{
+  margin-bottom: 30px;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.album{
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+}
+
+.album_id{
+  margin-right: 10px;
+}
+
 #container {
   height: 600px;
   background-color: rgb(143, 138, 138);
